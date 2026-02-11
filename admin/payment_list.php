@@ -7,7 +7,7 @@ require '../require/db.php';
 
 /* FIXED ORDER BY (column name required) */
     $res = selectData(
-        'categories',
+        'payments',
         $conn,
         '',
         '*',
@@ -16,8 +16,8 @@ require '../require/db.php';
     $success = isset($_GET['success'])? $_GET['success'] :'';
     $delete_id = isset($_GET['delete_id']) ? (int)$_GET['delete_id'] : 0;
     if ($delete_id > 0) {
-        deleteData('categories', $conn, "id=$delete_id");
-        header("Location: category_list.php?success=Delete Category Success");
+        deleteData('payments', $conn, "id=$delete_id");
+        header("Location: payment_list.php?success=Delete Payment Success");
         exit;
     }
 
@@ -40,9 +40,9 @@ require './layouts/header.php';
 
     <div class="container-fluid">
         <div class="justify-content-between d-flex mb-3">
-            <h1>Category List</h1>
-            <a href="<?= $admin_base_url . 'category_create.php' ?>" class="btn btn-primary">
-                Create Category
+            <h1>Payment List</h1>
+            <a href="<?= $admin_base_url . 'payment_create.php' ?>" class="btn btn-primary">
+                Create Payment
             </a>
         </div>
 
@@ -77,7 +77,7 @@ require './layouts/header.php';
                                         <td><?= date("Y-m-d g:i:s A", strtotime($row['created_at'])) ?></td>
                                         <td><?= date("Y-m-d g:i:s A", strtotime($row['updated_at'])) ?></td>
                                         <td>
-                                            <a href="<?= $admin_base_url ?>category_edit1.php?id=<?= $row['id'] ?>" 
+                                            <a href="<?= $admin_base_url ?>payment_edit1.php?id=<?= $row['id'] ?>" 
                                                 class="btn btn-primary btn-sm me-3">
                                                     Edit
                                                 </a>
@@ -121,7 +121,7 @@ $(document).ready(function ()
         confirmButtonText: 'Yes, delete'
         }).then((result) => {
             if (result.isConfirmed) {
-               window.location.href = "category_list.php?delete_id=" + id;
+               window.location.href = "payment_list.php?delete_id=" + id;
                 // Swal.fire('Deleted!', 'Your record has been deleted.', 'success')
             }
             })

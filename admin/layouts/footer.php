@@ -22,6 +22,11 @@
     <script src="js/settings.js"></script>
     <script src="js/gleek.js"></script>
     <script src="js/styleSwitcher.js"></script>
+    <script>
+        setTimeout(function () {
+        $('.alert').hide()
+        }, 3000); // time in milliseconds (2000ms = 2 seconds)
+    </script>
 
 </body>
 

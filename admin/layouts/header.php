@@ -14,7 +14,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <script src="../js/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
@@ -250,6 +251,15 @@
                         <ul aria-expanded="false">
                             <li><a href="<?= $admin_base_url .'category_list.php'?>">List</a></li>
                             <li><a href="<?= $admin_base_url .'category_create.php'?>">Create</a></li>
+                        </ul>
+                    </li>
+                     <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Payment</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="<?= $admin_base_url .'payment_list.php'?>">List</a></li>
+                            <li><a href="<?= $admin_base_url .'payment_create.php'?>">Create</a></li>
                         </ul>
                     </li>
                     <li>
